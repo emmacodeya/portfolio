@@ -1,0 +1,339 @@
+
+/* 內文 */
+
+.about-title {
+  color: $theme-cocoa;
+}
+
+.about-text {
+  color: $accent-400;
+}
+
+.section-title {
+  color: $accent-600;
+}
+
+/*Avatar*/
+
+.about-avatar {
+  width: 240px;
+}
+
+
+/* Skills*/
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+  gap: 20px;
+}
+
+.skill-item {
+  background: $accent-200;
+  transition: all .3s;
+}
+
+.skill-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.skill-item i,
+.skill-item span {
+  color: $accent-400;
+}
+
+
+/* Timeline*/
+
+.timeline {
+  position: relative;
+}
+
+/* 中線 */
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: $accent-200;
+  transform: translateX(-50%);
+}
+
+
+/* Timeline item */
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  opacity: 0;
+  transition: all .6s ease;
+}
+
+
+/* 左側 */
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+  transform: translateX(-60px);
+}
+
+
+/* 右側 */
+
+.timeline-item.right {
+  left: 50%;
+  transform: translateX(60px);
+}
+
+
+/* Scroll animation */
+
+.timeline-item.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* Dot */
+
+.timeline-dot {
+  position: absolute;
+  top: 28px;
+  left: 100%;
+  width: 14px;
+  height: 14px;
+  background: $accent-400;
+  border-radius: 50%;
+  border: 4px solid $accent-100;
+  z-index: 2;
+}
+
+/* 左側 dot */
+
+.timeline-item.left .timeline-dot {
+  left: calc(100% - 7px);
+}
+
+/* 右側 dot */
+
+.timeline-item.right .timeline-dot {
+  left: -7px;
+}
+
+
+/* Content */
+
+.timeline-content {
+  background: $accent-100;
+  max-width: 420px;
+}
+
+
+/* 左側卡片貼線 */
+
+.timeline-item.left .timeline-content {
+  margin-left: auto;
+}
+
+
+/* 文字 */
+
+.timeline-year {
+  color: $primary-800;
+}
+
+.timeline-title {
+  color: $primary-600;
+}
+
+.timeline-desc {
+  color: $accent-800;
+  opacity: .85;
+}
+
+
+/* 
+   Dark Mode
+ */
+
+.dark .about {
+  background: $accent-800;
+}
+
+.dark .about-title {
+  color: $accent-200;
+}
+
+.dark .about-text {
+  color: $text-light;
+}
+
+.dark .section-title  {
+  color: $accent-600;
+}
+
+.dark .timeline-title {
+  color: $accent-800;
+}
+
+
+/* Avatar */
+
+.dark .about-avatar {
+  box-shadow: 0 15px 40px rgba(255,255,255,0.08);
+}
+
+
+/* Skills */
+
+.dark .skill-item {
+  background: $primary-800;
+  color: $accent-200;
+}
+
+.dark .skill-item:hover {
+  box-shadow: 0 0 15px rgba(255,255,255,0.35);
+}
+
+.dark .skill-item i,
+.dark .skill-item span {
+  color: $accent-200;
+}
+
+
+/* Timeline */
+
+.dark .timeline::before {
+  background: $primary-600;
+}
+
+.dark .timeline-dot {
+  background: $accent-200;
+  border: 4px solid $primary-800;
+}
+
+.dark .timeline-content {
+  background: $primary-1000;
+}
+
+.dark .timeline-year {
+  color: $accent-200;
+}
+
+.dark .timeline-desc {
+  color: $text-light;
+}
+
+/* =========================
+   Mobile RWD
+========================= */
+
+@media (max-width: 992px) {
+
+/* Avatar */
+
+.about-avatar {
+  width: 150px;
+  margin-bottom: 24px;
+}
+
+
+/* 文字 */
+
+.about-title {
+  text-align: center;
+}
+
+.about-text {
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+
+/* Skills */
+
+.skills-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.skill-item {
+  padding: 14px;
+}
+
+.skill-item span {
+  font-size: 0.95rem;
+}
+
+
+/* =========================
+   Timeline
+========================= */
+
+/* 移除線 */
+
+.timeline::before {
+  display: none;
+}
+
+
+/* 移除點 */
+
+.timeline-dot {
+  display: none;
+}
+
+
+/* 取消左右排版 */
+
+.timeline-item {
+  width: 100%;
+  left: 0;
+  padding: 0;
+  transform: translateY(30px);
+}
+
+.timeline-item.left,
+.timeline-item.right {
+  left: 0;
+  text-align: left;
+}
+
+
+/* animation */
+
+.timeline-item.show {
+  transform: translateY(0);
+}
+
+
+/* 卡片 */
+
+.timeline-content {
+  max-width: 100%;
+  padding: 16px;
+  border-radius: 14px;
+}
+
+
+/* 文字 */
+
+.timeline-year {
+  font-size: 0.9rem;
+}
+
+.timeline-title {
+  font-size: 1.05rem;
+}
+
+.timeline-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+}

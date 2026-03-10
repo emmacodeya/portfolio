@@ -1,0 +1,14 @@
+@import 'bootstrap/scss/functions';
+@import "./variables.scss";
+@import 'bootstrap/scss/bootstrap';
+
+@import "./base/base.scss";
+
+@import "./Navbar.scss";
+@import "./Button.scss";
+
+@import "./Home.scss";
+@import "./About.scss";
+@import "./Projects.scss";
+@import "./ProjectCard.scss";
+@import "./Resume.scss";

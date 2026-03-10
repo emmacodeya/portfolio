@@ -1,0 +1,104 @@
+
+/* 內層 */
+
+.resume-inner {
+  max-width: 900px;
+}
+
+
+/* 主標題 */
+
+.resume-title {
+  font-size: 42px;
+  margin-bottom: 60px;
+  color: $theme-cocoa;
+}
+
+
+/* 區塊 */
+
+.resume-block {
+  margin-bottom: 60px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid $border-soft;
+}
+
+
+/* 區塊標題 */
+
+.resume-block-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  color: $accent-600;
+}
+
+
+/* 內文 */
+
+.resume-text {
+  color: $accent-400;
+}
+
+
+/* 聯絡 */
+
+.resume-contact {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/* 技能 */
+
+.resume-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.resume-skill-tag {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  background: $accent-200;
+  color: $accent-600;
+}
+
+
+/* 換行保留 */
+
+.resume-preline {
+  white-space: pre-line;
+  opacity: 0.9;
+}
+
+
+/* Dark Mode*/
+
+.dark .resume {
+  background: $accent-800;
+}
+
+.dark .resume-title {
+  color: $accent-200;
+}
+
+.dark .resume-block-title {
+  color: $accent-400;
+}
+
+.dark .resume-text {
+  color: rgba($accent-200, 0.85);
+}
+
+.dark .resume-block {
+  border-bottom: 1px solid rgba($primary-200, 0.15);
+}
+
+.dark .resume-skill-tag {
+  background: $accent-600;
+  color: $accent-200;
+}

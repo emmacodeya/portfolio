@@ -1,0 +1,48 @@
+
+/* 內文 */
+
+.hero-title {
+  color: $theme-cocoa;
+}
+
+.hero-subtitle {
+  color: $accent-400;
+}
+
+.hero-description {
+  max-width: 640px;
+  color: $primary-800;
+}
+
+/* Dark */
+
+.dark .home-hero {
+  background: $accent-800;
+}
+
+.dark .hero-title {
+  color: $accent-200;
+}
+
+.dark .hero-subtitle {
+  color: $accent-600;
+}
+
+.dark .hero-description {
+  color: $text-light;
+}
+
+
+/* RWD */
+
+@media (max-width: 768px) {
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+}

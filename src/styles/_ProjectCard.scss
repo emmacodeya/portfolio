@@ -1,0 +1,130 @@
+/* Project Card*/
+
+.project-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+
+  padding: 25px;
+  border-radius: 20px;
+
+  background: $bg-card;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transition: all .35s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(0,0,0,0.12);
+}
+
+
+/* 
+   Image
+ */
+
+.project-card__image img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+}
+
+
+/* 
+   Content
+ */
+
+.project-card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-card__title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: $accent-600;
+}
+
+.project-card__description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: $accent-400;
+}
+
+
+/* 
+   Tech Stack
+ */
+
+.project-card__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.project-card__tag {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+
+  background: $accent-200;
+  color: $accent-600;
+
+  font-weight: 500;
+}
+
+
+/*按鈕*/
+.project-card__buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* Dark Mode */
+
+.dark .project-card {
+  background: $primary-1000;
+}
+
+.dark .project-card__title {
+   color: $accent-800;
+}
+
+.dark .project-card__description {
+  color: $text-light;
+}
+
+.dark .project-card__tag {
+  background: $accent-600;
+  color: $accent-200;
+}
+
+
+
+/* 
+   Responsive
+ */
+
+@media (max-width: 992px) {
+
+  .project-card {
+    gap: 30px;
+    padding: 32px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .project-card {
+    grid-template-columns: 1fr;
+  }
+
+}

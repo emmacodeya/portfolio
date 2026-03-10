@@ -1,0 +1,74 @@
+/* Button Base */
+
+.app-btn {
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  transition: all .25s ease;
+}
+
+
+/* focus */
+
+.app-btn:focus,
+.app-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba($accent-400, 0.35);
+}
+
+
+/* hover */
+
+.app-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+
+/* primary */
+
+.app-btn-primary {
+  background: $accent-400;
+  color: $text-invert;
+}
+
+.app-btn-primary:hover {
+  background: $accent-600;
+}
+
+
+/* outline */
+
+.app-btn-outline {
+  border: 1px solid $accent-400;
+  color: $accent-600;
+  background: transparent;
+}
+
+.app-btn-outline:hover {
+  background: $accent-200;
+}
+
+
+/* dark */
+
+.dark .app-btn-primary {
+  background: $primary-600;
+}
+
+.dark .app-btn-primary:hover {
+  background: $primary-800;
+}
+
+.dark .app-btn-outline {
+  border: 1px solid $primary-400;
+  color: $primary-200;
+}
+
+.dark .app-btn-outline:hover {
+  background: rgba($primary-400, 0.2);
+}

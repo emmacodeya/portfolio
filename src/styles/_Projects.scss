@@ -1,0 +1,21 @@
+
+.projects-title {
+  text-align: center;
+  color: $theme-cocoa;
+}
+
+/* list */
+
+.projects-list {
+  gap: 60px;
+}
+
+/* Dark Mode */
+
+.dark .projects {
+  background: $accent-800;
+}
+
+.dark .projects-title {
+  color: $accent-200;
+}

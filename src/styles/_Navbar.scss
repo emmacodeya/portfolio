@@ -1,0 +1,158 @@
+/* Navbar */
+
+.custom-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+
+  padding: 22px 0;
+  transition: all 0.35s ease;
+
+  background: rgba($bg-card, 0.6);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid transparent;
+}
+
+/* 滾動後 */
+
+.custom-navbar.scrolled {
+  padding: 14px 0;
+
+  background: rgba($bg-card, 0.95);
+  border-bottom: 1px solid $border-soft;
+
+  box-shadow: 0 6px 20px rgba(93, 62, 63, 0.06);
+}
+
+/* Dark Navbar */
+
+.dark .custom-navbar {
+  background: rgba($accent-600, 0.88);
+
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba($accent-400, 0.25);
+}
+
+/* Logo */
+
+.logo {
+  margin: 0;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  color: $theme-cocoa;
+}
+
+.dark .logo {
+  color: $primary-200;
+}
+
+/* Nav Links */
+
+.nav-link {
+  position: relative;
+  color: $text-main;
+  font-weight: 500;
+  padding-bottom: 4px;
+}
+
+.dark .nav-link {
+  color: $primary-400;
+}
+/*Active link */
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* underline animation */
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  height: 2px;
+  width: 0%;
+
+  background: $accent-400;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+/* Dark underline*/
+
+.dark .nav-link::after {
+  background: $primary-600;
+}
+
+/*Buttons */
+
+.nav-btn {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border-radius: 50%;
+  border: 1px solid $border-strong;
+
+  background: transparent;
+  cursor: pointer;
+
+  font-size: 0.85rem;
+  transition: all 0.25s ease;
+}
+
+.nav-btn:hover {
+  background: $accent-200;
+  transform: translateY(-2px);
+}
+
+.icon-btn {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  font-size: 1rem;
+}
+
+/* Dark Button*/
+
+.dark .nav-btn {
+  border: 1px solid $accent-400;
+  color: $accent-200;
+}
+
+.dark .nav-btn:hover {
+  background: $accent-400;
+  color: $accent-800;
+}
+
+/* Mobile */
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.dark .navbar-toggler-icon {
+  filter: invert(1);
+}
