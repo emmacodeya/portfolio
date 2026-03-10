@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import { useState } from "react"
 
 import Navbar from "./components/Navbar"
@@ -14,21 +14,19 @@ function App() {
 
   return (
     <div className={dark ? "app dark" : "app"}>
-      <BrowserRouter>
-        <Navbar
-          dark={dark}
-          setDark={setDark}
-          lang={lang}
-          setLang={setLang}
-        />
+      <Navbar
+        dark={dark}
+        setDark={setDark}
+        lang={lang}
+        setLang={setLang}
+      />
 
-        <Routes>
-          <Route path="/" element={<Home lang={lang} />} />
-          <Route path="/about" element={<About lang={lang} />} />
-          <Route path="/projects" element={<Projects lang={lang} />} />
-          <Route path="/resume" element={<Resume lang={lang} />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home lang={lang} />} />
+        <Route path="/about" element={<About lang={lang} />} />
+        <Route path="/projects" element={<Projects lang={lang} />} />
+        <Route path="/resume" element={<Resume lang={lang} />} />
+      </Routes>
     </div>
   )
 }
