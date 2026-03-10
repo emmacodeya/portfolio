@@ -21,7 +21,6 @@ Corporate website for YiHsin Industrial Co., Ltd.
 ## Tech Stack
 
 - React
-- React Router
 - SCSS
 - Bootstrap
 
