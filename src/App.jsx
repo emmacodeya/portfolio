@@ -22,11 +22,11 @@ function App() {
       />
 
       <Routes>
-        <Route path="/" element={<Home lang={lang} />} />
-        <Route path="/about" element={<About lang={lang} />} />
-        <Route path="/projects" element={<Projects lang={lang} />} />
-        <Route path="/resume" element={<Resume lang={lang} />} />
-      </Routes>
+      <Route index element={<Home lang={lang} />} />
+      <Route path="/about" element={<About lang={lang} />} />
+      <Route path="/projects" element={<Projects lang={lang} />} />
+      <Route path="/resume" element={<Resume lang={lang} />} />
+    </Routes>
     </div>
   )
 }
