@@ -1,24 +1,27 @@
+import { Link } from "react-router-dom"
 import Button from "./Button"
 
-function ProjectCard({ project, lang }) {
-
-  const content = project[lang]
+function ProjectCard({ project, caseStudyPath }) {
+  const content = project.zh
+  const image = project.image.zh
 
   return (
     <div className="project-card">
-
-      {/* image */}
       <div className="project-card__image d-flex align-items-center justify-content-center">
-       <img
-        src={project.image[lang] || project.image.zh}
-        alt={content.title}
-      />
+        {image ? (
+          <img
+            src={image}
+            alt={content.title}
+          />
+        ) : (
+          <div className="project-card__image-placeholder">
+            圖片準備中
+          </div>
+        )}
       </div>
 
-      {/* content */}
       <div className="project-card__content d-flex align-items-center justify-content-center">
-
-        <h3 className="project-card__title ">
+        <h3 className="project-card__title">
           {content.title}
         </h3>
 
@@ -35,8 +38,15 @@ function ProjectCard({ project, lang }) {
         </div>
 
         <div className="project-card__buttons">
+          {caseStudyPath && (
+            <Link to={caseStudyPath}>
+              <Button variant="primary">
+                查看案例
+              </Button>
+            </Link>
+          )}
 
-          {project.github && (
+          {project.github && project.github !== "#" && (
             <Button
               variant="outline"
               href={project.github}
@@ -46,20 +56,17 @@ function ProjectCard({ project, lang }) {
             </Button>
           )}
 
-          {project.demo && (
+          {project.demo && project.demo !== "#" && (
             <Button
-              variant="primary"
+              variant="outline"
               href={project.demo}
               target="_blank"
             >
               Demo
             </Button>
           )}
-
         </div>
-
       </div>
-
     </div>
   )
 }

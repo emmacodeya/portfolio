@@ -1,6 +1,6 @@
 import dreamImage from "../assets/Dream-Workshop-lg.jpg"
-import yihsinImage from "../assets/yihsin-lg.jpg"
-import yihsinImageEn from "../assets/yihsin-enlg.jpg"
+import yihsinImage from "../assets/義歆官網PC.jpg"
+import figmaImage from "../assets/Figma.jpg"
 
 export const projects = [
   {
@@ -33,7 +33,6 @@ export const projects = [
     id: 2,
     image: {
       zh: yihsinImage,
-      en: yihsinImageEn
     },
      zh: {
     title: "義歆實業股份有限公司 官方網站",
@@ -52,7 +51,27 @@ export const projects = [
     "Responsive Design",
     "Multi-language"
   ],
-    github: "#",
+    github: "https://github.com/emmacodeya/YiHsin",
     demo: "https://www.yihsinmachine.com/"
+  },
+
+  {
+    id: 3,
+    image: {
+      zh: figmaImage
+    },
+    zh: {
+      title: "Figma 練習",
+      description:
+        "以生鮮購物 App 為主題進行 Figma 介面練習，規劃首頁、商品列表與商品詳情頁，並透過 Prototype 串接主要瀏覽流程。練習重點是理解使用者從瀏覽商品到查看詳情的操作路徑。"
+    },
+    tech: [
+      "Figma",
+      "Prototype",
+      "UI Design",
+      "App Flow",
+      "Icon Design"
+    ],
+    demo: "https://www.figma.com/design/zISIBBIlzVzlViG3OGX6sp/%E7%B7%B4%E7%BF%92?node-id=102-3&t=EdvNYDWAxpSVz6au-1"
   }
 ]

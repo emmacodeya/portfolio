@@ -1,32 +1,24 @@
 import { Routes, Route } from "react-router-dom"
-import { useState } from "react"
 
 import Navbar from "./components/Navbar"
 
-import Home from "./pages/Home"
 import About from "./pages/About"
 import Projects from "./pages/Projects"
 import Resume from "./pages/Resume"
+import CaseStudy from "./pages/CaseStudy"
 
 function App() {
-  const [dark, setDark] = useState(true)
-  const [lang, setLang] = useState("zh")
-
   return (
-    <div className={dark ? "app dark" : "app"}>
-      <Navbar
-        dark={dark}
-        setDark={setDark}
-        lang={lang}
-        setLang={setLang}
-      />
+    <div className="app dark">
+      <Navbar />
 
       <Routes>
-      <Route index element={<Home lang={lang} />} />
-      <Route path="/about" element={<About lang={lang} />} />
-      <Route path="/projects" element={<Projects lang={lang} />} />
-      <Route path="/resume" element={<Resume lang={lang} />} />
-    </Routes>
+        <Route index element={<About />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/:slug" element={<CaseStudy />} />
+        <Route path="/resume" element={<Resume />} />
+      </Routes>
     </div>
   )
 }

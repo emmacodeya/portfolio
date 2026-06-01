@@ -1,15 +1,10 @@
-/* Project Card*/
-
 .project-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-
   padding: 25px;
   border-radius: 20px;
-
   background: $bg-card;
-
   box-shadow: 0 20px 40px rgba(0,0,0,0.08);
   transition: all .35s ease;
 }
@@ -19,22 +14,26 @@
   box-shadow: 0 28px 60px rgba(0,0,0,0.12);
 }
 
-
-/* 
-   Image
- */
-
 .project-card__image img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 16 / 10;
   border-radius: 14px;
   display: block;
+  object-fit: cover;
 }
 
-
-/* 
-   Content
- */
+.project-card__image-placeholder {
+  align-items: center;
+  aspect-ratio: 16 / 10;
+  background: rgba($accent-600, 0.28);
+  border: 1px dashed rgba($accent-200, 0.45);
+  border-radius: 14px;
+  color: $accent-200;
+  display: flex;
+  font-weight: 600;
+  justify-content: center;
+  width: 100%;
+}
 
 .project-card__content {
   display: flex;
@@ -56,11 +55,6 @@
   color: $accent-400;
 }
 
-
-/* 
-   Tech Stack
- */
-
 .project-card__tech {
   display: flex;
   flex-wrap: wrap;
@@ -72,29 +66,24 @@
   padding: 6px 12px;
   border-radius: 999px;
   font-size: 0.8rem;
-
   background: $accent-200;
   color: $accent-600;
-
   font-weight: 500;
 }
 
-
-/*按鈕*/
 .project-card__buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   margin-top: 16px;
 }
-
-/* Dark Mode */
 
 .dark .project-card {
   background: $primary-1000;
 }
 
 .dark .project-card__title {
-   color: $accent-800;
+  color: $primary-400;
 }
 
 .dark .project-card__description {
@@ -106,25 +95,97 @@
   color: $accent-200;
 }
 
-
-
-/* 
-   Responsive
- */
-
 @media (max-width: 992px) {
-
   .project-card {
-    gap: 30px;
-    padding: 32px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-inline: auto;
+    max-width: 720px;
+    padding: 28px;
   }
 
+  .project-card__content {
+    align-items: flex-start;
+  }
+
+  .project-card__title {
+    font-size: 1.45rem;
+  }
+
+  .project-card__description {
+    font-size: 0.95rem;
+  }
+
+  .project-card__buttons {
+    margin-top: 8px;
+  }
 }
 
 @media (max-width: 768px) {
-
   .project-card {
-    grid-template-columns: 1fr;
+    padding: 24px;
   }
 
+  .project-card__image img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-card__image-placeholder {
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-card__title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .project-card__description {
+    line-height: 1.65;
+    margin-bottom: 18px;
+  }
+
+  .project-card__tech {
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .project-card__tag {
+    font-size: 0.76rem;
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .project-card {
+    border-radius: 14px;
+    padding: 18px;
+  }
+
+  .project-card__image img {
+    border-radius: 10px;
+  }
+
+  .project-card__image-placeholder {
+    border-radius: 10px;
+  }
+
+  .project-card__content {
+    align-items: stretch;
+  }
+
+  .project-card__buttons {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .project-card__buttons a,
+  .project-card__buttons .app-btn {
+    flex: 0 0 auto;
+    width: auto;
+  }
+
+  .project-card__buttons .app-btn {
+    min-height: 44px;
+    padding-inline: 12px;
+  }
 }

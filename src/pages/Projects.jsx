@@ -1,16 +1,18 @@
 import { projects } from "../data/projects"
 import ProjectCard from "../components/ProjectCard"
-import { translations } from "../data/translations"
 
-function Projects({ lang }) {
-  const t = translations[lang]
+const caseStudyPaths = {
+  1: "/projects/dream-workshop",
+  2: "/projects/yihsin",
+  3: "/projects/figma-practice" 
+}
 
+function Projects() {
   return (
     <section className="projects min-vh-100">
       <div className="container">
-
         <h1 className="projects-title fs-1 mb-10">
-          {t.projects.title}
+          作品集
         </h1>
 
         <div className="projects-list d-flex flex-column">
@@ -18,11 +20,10 @@ function Projects({ lang }) {
             <ProjectCard
               key={project.id}
               project={project}
-              lang={lang}
+              caseStudyPath={caseStudyPaths[project.id]}
             />
           ))}
         </div>
-
       </div>
     </section>
   )

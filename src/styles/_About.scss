@@ -5,8 +5,20 @@
   color: $theme-cocoa;
 }
 
+.about-subtitle {
+  color: $primary-400;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
 .about-text {
   color: $accent-400;
+}
+
+.about-hero .about-text {
+  color: $text-light;
+  line-height: 1.9;
+  max-width: 680px;
 }
 
 .section-title {
@@ -19,17 +31,83 @@
   width: 240px;
 }
 
+.about-hero {
+  min-height: 72vh;
+}
+
+.thinking-grid,
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.thinking-card,
+.featured-card {
+  background: $accent-100;
+  border-radius: 8px;
+  padding: 24px;
+  transition: all .3s;
+}
+
+.thinking-card {
+  color: $accent-600;
+  font-weight: 600;
+  text-align: center;
+}
+
+.thinking-card:hover,
+.featured-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.featured-projects {
+  margin-top: 72px;
+}
+
+.featured-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.featured-card h3 {
+  color: $accent-600;
+  font-size: 1.3rem;
+}
+
+.featured-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.featured-tags span {
+  background: $accent-200;
+  border-radius: 999px;
+  color: $accent-600;
+  font-size: 0.85rem;
+  padding: 6px 12px;
+}
+
 
 /* Skills*/
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
-  gap: 20px;
+  gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .skill-item {
+  align-items: center;
   background: $accent-200;
+  border-radius: 8px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  min-height: 64px;
+  padding: 14px 20px;
   transition: all .3s;
 }
 
@@ -41,6 +119,19 @@
 .skill-item i,
 .skill-item span {
   color: $accent-400;
+}
+
+.skill-item i {
+  flex: 0 0 auto;
+  font-size: 1.9rem;
+  line-height: 1;
+}
+
+.skill-item span {
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 
@@ -169,6 +260,10 @@
   color: $accent-200;
 }
 
+.dark .about-subtitle {
+  color: $primary-400;
+}
+
 .dark .about-text {
   color: $text-light;
 }
@@ -178,7 +273,7 @@
 }
 
 .dark .timeline-title {
-  color: $accent-800;
+  color: $primary-400;
 }
 
 
@@ -186,6 +281,22 @@
 
 .dark .about-avatar {
   box-shadow: 0 15px 40px rgba(255,255,255,0.08);
+}
+
+.dark .thinking-card,
+.dark .featured-card {
+  background: $primary-1000;
+  border: 1px solid rgba($primary-400, 0.16);
+}
+
+.dark .thinking-card,
+.dark .featured-card h3 {
+  color: $accent-200;
+}
+
+.dark .featured-tags span {
+  background: $accent-600;
+  color: $accent-200;
 }
 
 
@@ -254,20 +365,37 @@
   font-size: 0.95rem;
 }
 
+.about-hero {
+  min-height: auto;
+}
+
+.about-hero .about-text {
+  line-height: 1.8;
+  margin-inline: auto;
+  max-width: 620px;
+}
+
 
 /* Skills */
 
 .skills-grid {
-  grid-template-columns: repeat(2, 1fr);
   gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.thinking-grid,
+.featured-grid {
+  grid-template-columns: 1fr;
 }
 
 .skill-item {
-  padding: 14px;
+  min-width: 0;
+  padding: 14px 12px;
 }
 
 .skill-item span {
   font-size: 0.95rem;
+  white-space: normal;
 }
 
 
